@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Helper</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 32px;
+      font-family: system-ui;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+    }
+    select, input {
+      width: 100%;
+      padding: 4px;
+    }
+    .speed-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #speed-value {
+      min-width: 3ch;
+    }
+  </style>
+</head>
+<body>
+  <h3>Claude Voice</h3>
+
+  <div class="form-group">
+    <label for="key">OpenAI API Key:</label>
+    <input id="key" placeholder="sk-...">
+  </div>
+  
+  <div class="form-group">
+    <label for="tts">TTS Model:</label>
+    <select id="tts">
+      <option value="tts-1">tts-1</option>
+      <option value="tts-1-hd">tts-1-hd</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="stt">STT Model:</label>
+    <select id="stt">
+      <option value="whisper-1">whisper-1</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="llm">LLM Model:</label>
+    <select id="llm">
+      <option value="gpt-4o-mini">gpt-4o-mini</option>
+      <option value="gpt-4o">gpt-4o</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="voice">Voice:</label>
+    <select id="voice">
+      <option value="alloy">alloy</option>
+      <option value="echo">echo</option>
+      <option value="fable">fable</option>
+      <option value="onyx">onyx</option>
+      <option value="nova">nova</option>
+      <option value="shimmer">shimmer</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="speed">Speed:</label>
+    <div class="speed-container">
+      <input type="range" id="speed" min="0.5" max="1.5" step="0.1" value="1.0">
+      <span id="speed-value">1.0</span>
+    </div>
+  </div>
+
+  <p style="color: #666; font-size: 0.9em; margin-top: 24px;">
+    Note: Please reload claude.ai for changes to take effect
+  </p>
+
+  <script src="./popup.ts" type="module"></script>
+</body>
+</html>
